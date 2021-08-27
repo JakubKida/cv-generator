@@ -1,0 +1,117 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+.App{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background-color: rgb(197, 197, 177);
+}
+
+.form-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+#fill-form{
+    height: 90vh;
+    aspect-ratio: 1 / 1.40;
+    background-color: rgb(185, 185, 185);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
+}
+
+.form-header{
+    text-align: center;
+    font-family: "Roboto";
+}
+.personal-data-section, .experience-section, .experience{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.experience{
+    background-color: grey;
+    margin: 10px;
+}
+
+.buttons-area{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    /* width: 50vw; */
+    height: 100vh;
+}
+.buttons-area button{
+    white-space: nowrap;
+    border: none;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    font-size:20px;
+}
+
+.buttons-area button:hover{
+    opacity: 0.8;
+}
+
+.buttons-area .generate-pdf{
+    color: white;
+    /* background-color: rgb(0, 0, 82); */
+    background-color: rgb(139, 0, 0);
+}
+
+.buttons-area .load-example{
+    color: white;
+    background-color: rgb(0, 0, 82);
+    /* background-color: rgb(139, 0, 0); */
+}
+
+.buttons-area .clear-all{
+    color: white;
+    background-color: black;
+}
+
+
+
+.buttons-area .generate-pdf::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f1c1";
+    margin-left: 10px;
+}
+.buttons-area .load-example::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f15c";
+    margin-left: 10px;
+}
+
+.buttons-area .load-example::after{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f15c";
+    margin-left: 10px;
+}
+
+
+.cv-area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 100vh;
+}
+
+#generated-cv{
+    height: 90vh;
+    aspect-ratio: 1 / 1.40;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
+}

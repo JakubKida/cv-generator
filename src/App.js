@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <FilloutForm language={this.state.language}></FilloutForm>
-        <ControlButtons></ControlButtons>
+        <ControlButtons language={this.state.language}></ControlButtons>
         <CreatedCV></CreatedCV>
       </div>
     );

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { buttons } from "../helpers/languages";
 
 export default class ControlButtons extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -7,11 +8,12 @@ export default class ControlButtons extends Component {
   }
 
   render() {
+    const language = buttons[this.props.language];
     return (
       <div className="buttons-area">
-        <button className="generate-pdf">Generate PDF</button>
-        <button className="load-example">Load Example Data</button>
-        <button className="clear-all">Clear all fields</button>
+        <button className="generate-pdf">{language.generatePDF}</button>
+        <button className="load-example">{language.loadExample}</button>
+        <button className="clear-all">{language.clearAll}</button>
       </div>
     );
   }

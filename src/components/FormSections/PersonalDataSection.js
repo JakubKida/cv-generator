@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { personalSection } from "../helpers/languages";
+import { personalSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
 
 export default class PersonalDataSection extends Component {
@@ -10,9 +10,9 @@ export default class PersonalDataSection extends Component {
 
   render() {
     const language = personalSection[this.props.language];
-    const onChangeInput=this.props.onChangeInput;
     const personalData = this.props.formData[0];
-    // console.log(this.props);
+    const onChangeInput=this.props.onChangeInput;
+
     return (
       <div id="personal-data" className="personaldata section section-unit" data-index="0">
         <h3>{language.personalSection}</h3>
@@ -65,29 +65,6 @@ export default class PersonalDataSection extends Component {
           prompt={language.enterDescription}
           onChangeInput={onChangeInput}
         ></FormInput>
-{/* 
-        <label for="name">{language.name}</label>
-        <input name="name" type="text" placeholder={language.enterYourName}></input>
-        <label for="second-name">{language.secondName}</label>
-        <input
-          name="second-name"
-          type="text"
-          placeholder={language.enterYourSecondName}
-        ></input>
-        <label for="title">{language.title}</label>
-        <input name="title" type="text" placeholder={language.enterYourTitle}></input>
-        <label for="address">{language.address}</label>
-        <input name="address" type="text" placeholder={language.enterYourAddress}></input>
-        <label for="phone">{language.phone}</label>
-        <input name="phone" type="text" placeholder={language.enterYourPhone}></input>
-        <label for="email">{language.email}</label>
-        <input name="email" type="text" placeholder={language.email}></input>
-        <label for="description">{language.description}</label>
-        <input
-          name="description"
-          type="text"
-          placeholder={language.enterDescription}
-        ></input> */}
       </div>
     );
   }

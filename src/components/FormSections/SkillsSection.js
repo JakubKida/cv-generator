@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import uniqid from 'uniqid';
-import { skillsSection } from "../helpers/languages";
+import { skillsSection } from "../../helpers/languages";
 
 export default class SkillsSection extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -9,9 +9,10 @@ export default class SkillsSection extends Component {
   }
 
   render() {
-    let skills = this.props.formData;
     const language = skillsSection[this.props.language];
+    const skills = this.props.formData;
     const onChangeInput = this.props.onChangeInput;
+
     return (
       <div id="skills-data" className="skills-section section">
         <h2>{language.skills}</h2>

@@ -9,7 +9,7 @@ export default class CreatedCV extends Component {
   render() {
     return (
       <div className="cv-area">
-        <div id="generated-cv"> This is your cv baby !</div>
+        <div id="generated-cv"> This is your cv !</div>
       </div>
     );
   }

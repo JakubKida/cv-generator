@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import EducationSection from "./EducationSection";
-import ExperienceSection from "./ExperienceSection";
-import InterestsSection from "./InterestsSection";
-import PersonalDataSection from "./PersonalDataSection";
-import SkillsSection from "./SkillsSection";
+import EducationSection from "./FormSections/EducationSection";
+import ExperienceSection from "./FormSections/ExperienceSection";
+import InterestsSection from "./FormSections/InterestsSection";
+import PersonalDataSection from "./FormSections/PersonalDataSection";
+import SkillsSection from "./FormSections/SkillsSection";
 
 export default class FilloutForm extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ export default class FilloutForm extends Component {
   render() {
     const language = this.props.language;
     const data = this.state.data;
-    console.log(data);
+
     return (
       <div className="form-area">
         <form id="fill-form">

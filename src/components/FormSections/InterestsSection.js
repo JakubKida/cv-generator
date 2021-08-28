@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { interestsSection } from "../helpers/languages";
+import { interestsSection } from "../../helpers/languages";
 import uniqid from 'uniqid';
 
 export default class InterestsSection extends Component {
@@ -9,8 +9,8 @@ export default class InterestsSection extends Component {
   }
 
   render() {
-    let interests = this.props.formData;
     const language = interestsSection[this.props.language];
+    const interests = this.props.formData;
     const onChangeInput = this.props.onChangeInput;
 
     return (

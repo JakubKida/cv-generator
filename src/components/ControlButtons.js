@@ -9,9 +9,9 @@ export default class ControlButtons extends Component {
 
   render() {
     const language = buttons[this.props.language];
+
     return (
       <div className="buttons-area">
-        <button className="generate-pdf">{language.generatePDF}</button>
         <button className="load-example">{language.loadExample}</button>
         <button className="clear-all">{language.clearAll}</button>
       </div>

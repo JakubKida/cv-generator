@@ -24,7 +24,7 @@ export default class PersonalDataSection extends Component {
           onChangeInput={onChangeInput}
         ></FormInput>
         <FormInput
-          name="second-name"
+          name="secondName"
           description={language.secondName}
           value={personalData.secondName}
           prompt={language.enterYourSecondName}

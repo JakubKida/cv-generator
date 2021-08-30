@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { educationSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
-import uniqid from "uniqid";
 
 export default class EducationSection extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -21,7 +20,7 @@ export default class EducationSection extends Component {
         <h2>{language.education}</h2>
         <button onClick={onAddUnit}>Add new education</button>
         {educations.map((education, i) => (
-          <div key={uniqid()} className="education section-unit" data-index={i}>
+          <div key={i} className="education section-unit" data-index={i}>
             <FormInput
               name="facility"
               description={language.facility}

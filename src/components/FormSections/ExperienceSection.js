@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { experienceSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
-import uniqid from "uniqid";
 
 export default class ExperienceSection extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -24,7 +23,7 @@ export default class ExperienceSection extends Component {
         <h2>{language.experience}</h2>
         <button onClick={onAddUnit}>Add new position</button>
         {experiences.map((experience, i) => (
-          <div key={uniqid()} className="experience section-unit" data-index={i}>
+          <div key={i} className="experience section-unit" data-index={i}>
             <FormInput
               name="position"
               description={language.position}

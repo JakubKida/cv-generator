@@ -18,6 +18,11 @@ html,body{
     height: 100vh;
 }
 
+.form-input{
+    display: flex;
+    flex-direction: column;
+}
+
 #fill-form{
     overflow: scroll;
     height: 90vh;
@@ -103,16 +108,166 @@ html,body{
 
 
 .cv-area{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height: 100vh;
+    align-items: center; */
+    /* width: 50vw; */
+    /* height: 100vh; */
 }
 
 #generated-cv{
-    height: 90vh;
-    aspect-ratio: 1 / 1.40;
+    height: 1400px;
+    width: 1000px;
+    /* aspect-ratio: 1 / 1.40; */
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
 }
+
+
+#generated-cv .header{
+    background-color: rgb(80, 80, 80);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 20px 20px 0px 20px;
+    height: 12%;
+}
+
+#generated-cv .name{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.7rem;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#generated-cv .underline{
+    background-color: white;
+    width: 50px;
+    height: 1px;
+    margin-bottom: 5px;
+}
+
+#generated-cv .title{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 200;
+}
+
+#generated-cv .side-area{
+    /* background-color: red; */
+    width: 35%;
+    /* height: 78%; */
+}
+
+#generated-cv .center-area{
+    /* background-color: blue; */
+    width: 70%;
+    /* height: 78%; */
+}
+
+#generated-cv .main-area{
+    height: 78%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0 30px;
+    /* background-color: lightgray; */
+}
+
+#generated-cv .cv-section{
+    margin-top: 10px;
+}
+
+#generated-cv .cv-section-unit{
+    position: relative;
+    margin: 5px 0px;
+}
+
+#generated-cv .cv-section-title{
+    color: rgb(80, 80, 80);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+}
+
+#generated-cv .cv-section-title-underline{
+    background-color: red;
+    width: 50px;
+    height: 2px;
+    margin-bottom: 5px;
+}
+
+#generated-cv .cv-section-data{
+    color: rgb(97, 97, 97);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.6rem;
+}
+
+#generated-cv .cv-experience-position, #generated-cv .cv-education-facility{
+    font-weight: 900;
+}
+
+#generated-cv .cv-experience-company{
+    color: black;
+    font-weight: 300;
+}
+
+#generated-cv .cv-experience-work-period{
+    color: rgb(80, 80, 80);
+    background-color: rgba(255, 0, 0, 0.226);
+    padding: 0px 5px;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+li,ul{
+    margin-left: 15px;
+    padding: 0;
+}
+
+ul {
+    list-style: none; /* Remove default bullets */
+  }
+
+  ul li::before {
+    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: red; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+  }
+
+  .cv-contact-phone::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: red;
+    content: "\f095";
+    margin-right: 5px;
+    width: 10px;
+  }
+
+  .cv-contact-email::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: red;
+    content: "\f0e0";
+    margin-right: 5px;
+    width: 100px;
+
+  }
+
+  .cv-contact-address::before{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: red;
+    content: "\f3c5";
+    margin-right: 5px;
+    width: 100px;
+
+  }

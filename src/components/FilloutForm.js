@@ -9,9 +9,12 @@ export default class FilloutForm extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.deleteUnit = this.deleteUnit.bind(this);
+    this.addUnit = this.addUnit.bind(this);
+
     this.state = {
       data: {
-        "personal-data": [{ name: "Lol", address: "trolo" }],
+        "personal-data": [{ name: "Lol", address: "trolo", phone: "", email: "" }],
         "experience-data": [{}],
         "education-data": [{ facility: "Poli" }, { facility: "Uni" }],
         "skills-data": [{}],
@@ -21,7 +24,7 @@ export default class FilloutForm extends Component {
   }
 
   handleChange(event) {
-    debugger;
+    // debugger;
     let name = event.target.name;
     let value = event.target.value;
     let sectionName = event.target.closest(".section").id;
@@ -45,6 +48,41 @@ export default class FilloutForm extends Component {
     setTimeout(() => console.log(this.state), 100);
   }
 
+  deleteUnit(event) {
+    event.preventDefault();
+    let sectionName = event.target.closest(".section").id;
+    let unitIndex = event.target.closest(".section-unit").dataset.index;
+
+    const copiedObj = JSON.parse(JSON.stringify(this.state.data[sectionName]));
+
+    if (copiedObj[unitIndex] !== undefined) {
+      copiedObj.splice(unitIndex, 1);
+    }
+
+    this.setState((prevState) => ({
+      data: {
+        ...this.state.data,
+        [sectionName]: copiedObj,
+      },
+    }));
+  }
+
+  addUnit(event) {
+    event.preventDefault();
+    let sectionName = event.target.closest(".section").id;
+
+    const copiedObj = JSON.parse(JSON.stringify(this.state.data[sectionName]));
+
+    copiedObj.push({});
+
+    this.setState((prevState) => ({
+      data: {
+        ...this.state.data,
+        [sectionName]: copiedObj,
+      },
+    }));
+  }
+
   render() {
     const language = this.props.language;
     const data = this.state.data;
@@ -62,21 +100,29 @@ export default class FilloutForm extends Component {
             formData={data["experience-data"]}
             language={language}
             onChangeInput={this.handleChange}
+            onDeleteUnit={this.deleteUnit}
+            onAddUnit={this.addUnit}
           ></ExperienceSection>
           <SkillsSection
             formData={data["skills-data"]}
             language={language}
             onChangeInput={this.handleChange}
+            onDeleteUnit={this.deleteUnit}
+            onAddUnit={this.addUnit}
           ></SkillsSection>
           <EducationSection
             formData={data["education-data"]}
             language={language}
             onChangeInput={this.handleChange}
+            onDeleteUnit={this.deleteUnit}
+            onAddUnit={this.addUnit}
           ></EducationSection>
           <InterestsSection
-            formData={data["education-data"]}
+            formData={data["interests-data"]}
             language={language}
             onChangeInput={this.handleChange}
+            onDeleteUnit={this.deleteUnit}
+            onAddUnit={this.addUnit}
           ></InterestsSection>
         </form>
       </div>

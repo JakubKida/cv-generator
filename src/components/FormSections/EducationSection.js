@@ -13,11 +13,13 @@ export default class EducationSection extends Component {
     const language = educationSection[this.props.language];
     const educations = this.props.formData;
     const onChangeInput = this.props.onChangeInput;
+    const onDeleteUnit = this.props.onDeleteUnit;
+    const onAddUnit = this.props.onAddUnit;
 
     return (
-      <div className="section" id="education">
+      <div id="education-data" className="section" >
         <h2>{language.education}</h2>
-        <button>Add new education</button>
+        <button onClick={onAddUnit}>Add new education</button>
         {educations.map((education, i) => (
           <div key={uniqid()} className="education section-unit" data-index={i}>
             <FormInput
@@ -62,7 +64,7 @@ export default class EducationSection extends Component {
               prompt={language.toWhen}
               onChangeInput={onChangeInput}
             ></FormInput>
-            <button>Delete This Education</button>
+            <button onClick={onDeleteUnit}>Delete This Education</button>
           </div>
         ))}
       </div>

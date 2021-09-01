@@ -66,19 +66,81 @@ export const experienceSection = {
 };
 
 export const educationSection = {
-    polish:{
-        education:"Edukacja",
-    },
-    english:{
-        education:"Education",
-    }
-}
+  polish: {
+    education: "Edukacja",
+    facility: "Placówka",
+    enterFacility: "Wpisz miejsce nauki",
+    city: "Miasto",
+    enterCity: "Wpisz miasto",
+    degree: "Stopień naukowy",
+    enterDegree: "Wpisz stopień naukowy",
+    subject: "Kierunek kształcenia",
+    enterSubject: "Wpisz kierunek kształcenia",
+    from: "Od",
+    enterFromWhen: "Wpisz datę rozpoczęcia",
+    to: "Do",
+    toWhen: "Wpisz datę zakończenia",
+  },
+  english: {
+    education: "Education",
+    facility: "Facility",
+    enterFacility: "Enter facility",
+    city: "City",
+    enterCity: "Enter city",
+    degree: "Degree",
+    enterDegree: "Enter your degree",
+    subject: "Subject",
+    enterSubject: "Enter the subject",
+    from: "From",
+    enterFromWhen: "Enter start date",
+    to: "To",
+    toWhen: "Enter end date",
+  },
+};
 
 export const skillsSection = {
-    polish:{
-        skills:"Umiejętności",
-    },
-    english:{
-        skills:"Skills",
-    }
+  polish: {
+    skills: "Umiejętności",
+    enterSkill: "Wpisz swoją umiejetność",
+  },
+  english: {
+    skills: "Skills",
+    enterSkill: "Enter your skill",
+  },
+};
+
+export const interestsSection={
+  polish:{
+    interests:"Zainteresowania",
+    enterInterest: "Wpisz zainteresowanie"
+  },
+  english:{
+    skills:"Interests",
+    enterInterest: "Enter your interest"
+  }
 }
+
+export const buttons = {
+  polish: {
+    addPosition: "Dodaj pozycję",
+    deletePosition: "Usuń pozycję",
+    addSKill: "Dodaj umiejętność",
+    deleteSKill: "Usuń umiejętność",
+    addSchool: "Dodaj edukację",
+    deleteSchool: "Usuń edukację",
+    generatePDF: "Wygeneruj plik PDF",
+    loadExample: "Wczytaj przykładowe dane",
+    clearAll: "Wyczyść wszystkie pola",
+  },
+  english: {
+    addPosition: "Add position",
+    deletePosition: "Delete position",
+    addSKill: "Add Skill",
+    deleteSKill: "Delete Skill",
+    addSchool: "Add Education",
+    deleteSchool: "Usuń edukację",
+    generatePDF: "Generate PDF File",
+    loadExample: "Load example data",
+    clearAll: "Clear all fields",
+  },
+};

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { educationSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
-import uniqid from "uniqid";
 
 export default class EducationSection extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -19,9 +18,9 @@ export default class EducationSection extends Component {
     return (
       <div id="education-data" className="section" >
         <h2>{language.education}</h2>
-        <button onClick={onAddUnit}>Add new education</button>
+        <button className="add-button" onClick={onAddUnit}>Add new education</button>
         {educations.map((education, i) => (
-          <div key={uniqid()} className="education section-unit" data-index={i}>
+          <div key={i} className="education section-unit" data-index={i}>
             <FormInput
               name="facility"
               description={language.facility}
@@ -64,7 +63,7 @@ export default class EducationSection extends Component {
               prompt={language.toWhen}
               onChangeInput={onChangeInput}
             ></FormInput>
-            <button onClick={onDeleteUnit}>Delete This Education</button>
+            <button className="delete-button" onClick={onDeleteUnit}>Delete This Education</button>
           </div>
         ))}
       </div>

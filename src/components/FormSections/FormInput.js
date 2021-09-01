@@ -11,7 +11,7 @@ export default class FormInput extends Component {
     return (
       <div className="form-input">
         <label htmlFor={name}>{description}</label>
-        <input name={name} type="text" placeholder={prompt} value={value} onChange={onChangeInput}></input>
+        <input name={name} type="text" placeholder={prompt} value={value||''} onChange={onChangeInput}></input>
       </div>
     );
   }

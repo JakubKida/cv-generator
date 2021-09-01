@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { buttons } from "../helpers/languages";
 import EducationSection from "./FormSections/EducationSection";
 import ExperienceSection from "./FormSections/ExperienceSection";
 import InterestsSection from "./FormSections/InterestsSection";
@@ -19,7 +20,7 @@ export default class FilloutForm extends Component {
     return (
       <div className="form-area">
         <form id="fill-form">
-          <h2 className="form-header">Wypełnij poniższe pola</h2>
+          <h2 className="form-header">{buttons[this.props.language].fillTheForm}</h2>
           <PersonalDataSection
             formData={data["personal-data"]}
             language={language}

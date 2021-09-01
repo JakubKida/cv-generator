@@ -15,6 +15,7 @@ export const personalSection = {
     enterYourEmail: "Wpisz swój adres email",
     description: "Opis",
     enterDescription: "Napisz coś o sobie",
+    photo: "Zdjęcie (opcjonalne)",
   },
 
   english: {
@@ -25,14 +26,15 @@ export const personalSection = {
     enterYourSecondName: "Enter your second name",
     title: "Title",
     enterYourTitle: "Enter your title",
-    address: "Adddress",
+    address: "Address",
     enterYourAddress: "Enter your address",
     phone: "Phone Number",
     enterYourPhone: "Enter your phone number",
     email: "E-mail address",
     enterYourEmail: "Enter your e-mail address",
-    describe: "Desription",
-    enterDescribe: "Write something about yourself.",
+    description: "Desription",
+    enterDescription: "Write something about yourself.",
+    photo: "Photo (optional)",
   },
 };
 
@@ -76,10 +78,10 @@ export const educationSection = {
     enterDegree: "Wpisz stopień naukowy",
     subject: "Kierunek kształcenia",
     enterSubject: "Wpisz kierunek kształcenia",
-    from: "Od",
+    fromWhen: "Od",
     enterFromWhen: "Wpisz datę rozpoczęcia",
-    to: "Do",
-    toWhen: "Wpisz datę zakończenia",
+    toWhen: "Do",
+    enterToWhen: "Wpisz datę zakończenia",
   },
   english: {
     education: "Education",
@@ -91,10 +93,10 @@ export const educationSection = {
     enterDegree: "Enter your degree",
     subject: "Subject",
     enterSubject: "Enter the subject",
-    from: "From",
+    fromWhen: "From",
     enterFromWhen: "Enter start date",
-    to: "To",
-    toWhen: "Enter end date",
+    toWhen: "To",
+    enterToWhen: "Enter end date",
   },
 };
 
@@ -109,38 +111,69 @@ export const skillsSection = {
   },
 };
 
-export const interestsSection={
-  polish:{
-    interests:"Zainteresowania",
-    enterInterest: "Wpisz zainteresowanie"
+export const interestsSection = {
+  polish: {
+    interests: "Zainteresowania",
+    enterInterest: "Wpisz zainteresowanie",
   },
-  english:{
-    skills:"Interests",
-    enterInterest: "Enter your interest"
-  }
-}
+  english: {
+    interests: "Interests",
+    enterInterest: "Enter your interest",
+  },
+};
 
 export const buttons = {
   polish: {
+    fillTheForm: "Wypełnij poniższe pola",
     addPosition: "Dodaj pozycję",
     deletePosition: "Usuń pozycję",
-    addSKill: "Dodaj umiejętność",
-    deleteSKill: "Usuń umiejętność",
-    addSchool: "Dodaj edukację",
-    deleteSchool: "Usuń edukację",
+    addSkill: "Dodaj umiejętność",
+    deleteSkill: "Usuń umiejętność",
+    addInterest: "Dodaj zainteresowanie",
+    deleteInterest: "Usuń zainteresowanie",
+    addEducation: "Dodaj edukację",
+    deleteEducation: "Usuń edukację",
     generatePDF: "Wygeneruj plik PDF",
     loadExample: "Wczytaj przykładowe dane",
     clearAll: "Wyczyść wszystkie pola",
   },
   english: {
+    fillTheForm: "Fill the following fields",
     addPosition: "Add position",
     deletePosition: "Delete position",
-    addSKill: "Add Skill",
-    deleteSKill: "Delete Skill",
-    addSchool: "Add Education",
-    deleteSchool: "Usuń edukację",
+    addSkill: "Add skill",
+    deleteSkill: "Delete skill",
+    addInterest: "Add interest",
+    deleteInterest: "Delete interest",
+    addEducation: "Add Education",
+    deleteEducation: "Usuń edukację",
     generatePDF: "Generate PDF File",
     loadExample: "Load example data",
     clearAll: "Clear all fields",
+  },
+};
+
+export const cvSections = {
+  polish: {
+    name: "Imię",
+    secondName: "Nazwisko",
+    title: "Tytuł",
+    profile: "Profil",
+    experience: "Doświadczenie",
+    education: "Edukacja",
+    skills: "Umiejętności",
+    interests: "Zainteresowania",
+    contact: "Kontakt",
+  },
+  english: {
+    name: "Name",
+    secondName: "Surname",
+    title:"Title",
+    profile: "Profile",
+    experience: "Experience",
+    education: "Education",
+    skills: "Skills",
+    interests: "Interests",
+    contact: "Contact",
   },
 };

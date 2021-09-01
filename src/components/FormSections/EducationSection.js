@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { educationSection } from "../../helpers/languages";
+import { buttons, educationSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
 
 export default class EducationSection extends Component {
@@ -10,6 +10,8 @@ export default class EducationSection extends Component {
 
   render() {
     const language = educationSection[this.props.language];
+    const buttonNames = buttons[this.props.language];
+
     const educations = this.props.formData;
     const onChangeInput = this.props.onChangeInput;
     const onDeleteUnit = this.props.onDeleteUnit;
@@ -18,7 +20,7 @@ export default class EducationSection extends Component {
     return (
       <div id="education-data" className="section" >
         <h2>{language.education}</h2>
-        <button className="add-button" onClick={onAddUnit}>Add new education</button>
+        <button className="add-button" onClick={onAddUnit}>{buttonNames.addEducation}</button>
         {educations.map((education, i) => (
           <div key={i} className="education section-unit" data-index={i}>
             <FormInput
@@ -60,10 +62,10 @@ export default class EducationSection extends Component {
               name="toWhen"
               description={language.toWhen}
               value={education.toWhen}
-              prompt={language.toWhen}
+              prompt={language.enterToWhen}
               onChangeInput={onChangeInput}
             ></FormInput>
-            <button className="delete-button" onClick={onDeleteUnit}>Delete This Education</button>
+            <button className="delete-button" onClick={onDeleteUnit}>{buttonNames.deleteEducation}</button>
           </div>
         ))}
       </div>

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import uniqid from "uniqid";
+import { cvSections } from "../helpers/languages";
 
 export default class CreatedCV extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -8,6 +9,7 @@ export default class CreatedCV extends Component {
   }
 
   render() {
+    const language = cvSections[this.props.language];
     const personalData = this.props.data["personal-data"][0];
     const experienceData = this.props.data["experience-data"];
     const educationData = this.props.data["education-data"];
@@ -17,15 +19,15 @@ export default class CreatedCV extends Component {
       <div id="generated-cv" >
             <div className="header">
               <div className="name">
-                {personalData.name || "Imię"} {personalData.secondName || "Nazwisko"}
+                {personalData.name || language.name} {personalData.secondName || language.secondName}
               </div>
               <div className="underline"></div>
-              <div className="title">{personalData.title || "Tytuł"}</div>
+              <div className="title">{personalData.title || language.title}</div>
             </div>
         <div className="main-area">
           <div className="side-area">
             <div className="cv-section">
-              <div className="cv-section-title">Kontakt</div>
+              <div className="cv-section-title">{language.contact}</div>
               <div className="cv-section-title-underline"></div>
               <div className="cv-section-data cv-contact-address">
                 {personalData.address}
@@ -37,13 +39,13 @@ export default class CreatedCV extends Component {
           <div className="center-area">
 
             <div className="cv-section">
-              <div className="cv-section-title">Profil</div>
+              <div className="cv-section-title">{language.profile}</div>
               <div className="cv-section-title-underline"></div>
               <div className="cv-section-data">{personalData.description}</div>
             </div>
             {experienceData.length > 0 && (
               <div className="cv-section">
-                <div className="cv-section-title">Doświadczenie</div>
+                <div className="cv-section-title">{language.experience}</div>
                 <div className="cv-section-title-underline"></div>
                 <div className="cv-section-data">
                   {experienceData.map((experience) => (
@@ -61,7 +63,7 @@ export default class CreatedCV extends Component {
             )}
             {educationData.length > 0 && (
               <div className="cv-section">
-                <div className="cv-section-title">Edukacja</div>
+                <div className="cv-section-title">{language.education}</div>
                 <div className="cv-section-title-underline"></div>
                 <div className="cv-section-data">
                   {educationData.map((education) => (
@@ -83,7 +85,7 @@ export default class CreatedCV extends Component {
             )}
             {skillsData.length > 0 && (
               <div className="cv-section">
-                <div className="cv-section-title">Umiejętności</div>
+                <div className="cv-section-title">{language.skills}</div>
                 <div className="cv-section-title-underline"></div>
                 <div className="cv-section-data">
                   {skillsData.map((skill) => (
@@ -96,7 +98,7 @@ export default class CreatedCV extends Component {
             )}
             {interestData.length > 0 && (
               <div className="cv-section">
-                <div className="cv-section-title">Zainteresowania</div>
+                <div className="cv-section-title">{language.interests}</div>
                 <div className="cv-section-title-underline"></div>
                 <div className="cv-section-data">
                   {interestData.map((interest) => (

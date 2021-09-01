@@ -6,6 +6,7 @@ import React from "react";
 import uniqid from "uniqid";
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
 import { exampledata } from "./helpers/exampledata";
+import { buttons } from "./helpers/languages";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
     this.deleteUnit = this.deleteUnit.bind(this);
     this.clearAllFields = this.clearAllFields.bind(this);
     this.loadExample = this.loadExample.bind(this);
+    this.changeLanguage = this.changeLanguage.bind(this);
     this.addUnit = this.addUnit.bind(this);
     this.state = {
       image: {},
@@ -29,7 +31,12 @@ class App extends React.Component {
     };
   }
 
-  clearAllFields(){
+  changeLanguage(event) {
+    event.preventDefault();
+    this.setState({ language: event.target.dataset.language });
+  }
+
+  clearAllFields() {
     this.setState({
       data: {
         "personal-data": [{}],
@@ -38,11 +45,11 @@ class App extends React.Component {
         "skills-data": [{}],
         "interests-data": [{}],
       },
-    })
+    });
   }
 
-  loadExample(){
-    this.setState({data:exampledata});
+  loadExample() {
+    this.setState({ data: exampledata });
   }
 
   async handleImageChange(event) {
@@ -131,6 +138,20 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <div className="change-lang">
+          <button
+            className="lang-button lang-pol"
+            data-language="polish"
+            onClick={this.changeLanguage}
+          >
+          </button>
+          <button
+            className="lang-button lang-eng"
+            data-language="english"
+            onClick={this.changeLanguage}
+          >
+          </button>
+        </div>
         <FilloutForm
           language={this.state.language}
           data={this.state.data}
@@ -143,19 +164,21 @@ class App extends React.Component {
           <PrintContextConsumer>
             {({ handlePrint }) => (
               <button className="generate-pdf" onClick={handlePrint}>
-                Generuj pdf
+                {buttons[this.state.language].generatePDF}
               </button>
             )}
           </PrintContextConsumer>
         </ReactToPrint>
         <ControlButtons
-        loadExample={this.loadExample}
+          loadExample={this.loadExample}
           language={this.state.language}
           data={this.state.data}
           clearAllFields={this.clearAllFields}
         ></ControlButtons>
         <div className="cv-area">
-          <CreatedCV  ref={(el) => (this.componentRef = el)}
+          <CreatedCV
+            language={this.state.language}
+            ref={(el) => (this.componentRef = el)}
             image={this.state.image}
             data={this.state.data}
           ></CreatedCV>

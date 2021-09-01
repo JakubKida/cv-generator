@@ -107,7 +107,9 @@ border: 2px solid rgba(255, 0, 0, 0.479);
 
 .form-header {
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
 .section {
   display: flex;
@@ -371,6 +373,32 @@ ul li::before {
 
 .cv-section-data.cv-contact-address, .cv-contact-email, .cv-contact-phone{
     font-size: 0.8em;
+}
+
+.change-lang{
+    width: 100vw;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lang-button{
+    width: 20vh;
+    height: 10vh;
+    padding: 2vh;
+    border: none;
+}
+
+.lang-pol{
+    background: url('../assets/pol.png');
+    background-size: contain;
+}
+
+.lang-eng{
+    background: url('../assets/eng.png');
+    margin-left: 10px;
+    background-size: contain;
 }
 
 @media print{

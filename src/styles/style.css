@@ -109,9 +109,7 @@ border: 2px solid rgba(255, 0, 0, 0.479);
   text-align: center;
   font-family: "Roboto";
 }
-.personal-data-section,
-.experience-section,
-.experience {
+.section {
   display: flex;
   flex-direction: column;
 }
@@ -153,7 +151,7 @@ border: 2px solid rgba(255, 0, 0, 0.479);
   padding: 20px;
   border-radius: 10px;
   font-size: 20px;
-  width: 60vw;
+  min-width: 60vw;
 }
 
 .buttons-area button:hover, .generate-pdf:hover {
@@ -208,8 +206,8 @@ border: 2px solid rgba(255, 0, 0, 0.479);
 #generated-cv {
   /* height: 1400px;*/
   margin: 10px;
-  width: 60vw;
-  height: 84vw;
+  width: 80vw;
+  height: 112vw;
   /* display: inline; */
   /* aspect-ratio: 1.40 / 1; */
   background-color: rgb(255, 255, 255);
@@ -225,7 +223,7 @@ border: 2px solid rgba(255, 0, 0, 0.479);
   justify-content: center;
   align-items: center;
   padding: 5px;
-  /* margin: 20px 0px 0px 0px; */
+  margin: 20px;
   /* height: 12%; */
 }
 

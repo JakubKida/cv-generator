@@ -5,6 +5,7 @@ import ControlButtons from "./components/ControlButtons";
 import React from "react";
 import uniqid from "uniqid";
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
+import { exampledata } from "./helpers/exampledata";
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,8 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleImageChange = this.handleImageChange.bind(this);
     this.deleteUnit = this.deleteUnit.bind(this);
+    this.clearAllFields = this.clearAllFields.bind(this);
+    this.loadExample = this.loadExample.bind(this);
     this.addUnit = this.addUnit.bind(this);
     this.state = {
       image: {},
@@ -19,11 +22,27 @@ class App extends React.Component {
       data: {
         "personal-data": [{}],
         "experience-data": [{}],
-        "education-data": [{ facility: "Poli" }, { facility: "Uni" }],
+        "education-data": [{}],
         "skills-data": [{}],
         "interests-data": [{}],
       },
     };
+  }
+
+  clearAllFields(){
+    this.setState({
+      data: {
+        "personal-data": [{}],
+        "experience-data": [{}],
+        "education-data": [{}],
+        "skills-data": [{}],
+        "interests-data": [{}],
+      },
+    })
+  }
+
+  loadExample(){
+    this.setState({data:exampledata});
   }
 
   async handleImageChange(event) {
@@ -130,14 +149,15 @@ class App extends React.Component {
           </PrintContextConsumer>
         </ReactToPrint>
         <ControlButtons
+        loadExample={this.loadExample}
           language={this.state.language}
           data={this.state.data}
+          clearAllFields={this.clearAllFields}
         ></ControlButtons>
         <div className="cv-area">
-          <CreatedCV
+          <CreatedCV  ref={(el) => (this.componentRef = el)}
             image={this.state.image}
             data={this.state.data}
-            ref={(el) => (this.componentRef = el)}
           ></CreatedCV>
         </div>
       </div>

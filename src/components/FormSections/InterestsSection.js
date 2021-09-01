@@ -21,7 +21,7 @@ export default class InterestsSection extends Component {
         <button className="add-button" onClick={onAddUnit}>Add new interest</button>
         {interests.map((interest,i) => (
           <div  key={i} className="interest section-unit" data-index={i}>
-            <input type="text" name="interest-name" placeholder={language.enterInterest} value={interest.interestName} onChange={onChangeInput}></input>
+            <input type="text" name="interest-name" placeholder={language.enterInterest} value={interest["interest-name"] || ""} onChange={onChangeInput}></input>
             <button className="delete-button" onClick={onDeleteUnit}>Delete this interest</button>
           </div>
         ))}

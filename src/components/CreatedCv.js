@@ -13,14 +13,17 @@ export default class CreatedCV extends Component {
     const educationData = this.props.data["education-data"];
     const skillsData = this.props.data["skills-data"];
     const interestData = this.props.data["interests-data"];
-    const image = this.props.image;
     return (
-      <div id="generated-cv">
+      <div id="generated-cv" >
+            <div className="header">
+              <div className="name">
+                {personalData.name || "Imię"} {personalData.secondName || "Nazwisko"}
+              </div>
+              <div className="underline"></div>
+              <div className="title">{personalData.title || "Tytuł"}</div>
+            </div>
         <div className="main-area">
           <div className="side-area">
-            {/* {Object.keys(image).length !== 0 && image.constructor !== Object && (
-              <img className="image-preview" src="#" alt="personal"></img>
-            )} */}
             <div className="cv-section">
               <div className="cv-section-title">Kontakt</div>
               <div className="cv-section-title-underline"></div>
@@ -32,13 +35,6 @@ export default class CreatedCV extends Component {
             </div>
           </div>
           <div className="center-area">
-            <div className="header">
-              <div className="name">
-                {personalData.name || "Imię"} {personalData.secondName || "Nazwisko"}
-              </div>
-              <div className="underline"></div>
-              <div className="title">{personalData.title || "Tytuł"}</div>
-            </div>
 
             <div className="cv-section">
               <div className="cv-section-title">Profil</div>

@@ -9,11 +9,17 @@ export default class ControlButtons extends Component {
 
   render() {
     const language = buttons[this.props.language];
+    const clearAllFields = this.props.clearAllFields;
+    const loadExample = this.props.loadExample;
 
     return (
       <div className="buttons-area">
-        <button className="load-example">{language.loadExample}</button>
-        <button className="clear-all">{language.clearAll}</button>
+        <button className="load-example" onClick={loadExample}>
+          {language.loadExample}
+        </button>
+        <button className="clear-all" onClick={clearAllFields}>
+          {language.clearAll}
+        </button>
       </div>
     );
   }

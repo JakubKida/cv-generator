@@ -107,11 +107,11 @@ border: 2px solid rgba(255, 0, 0, 0.479);
 
 .form-header {
   text-align: center;
-  font-family: "Roboto";
+  font-family: "Poppins", sans-serif;
+  color: white;
+  text-shadow: 2px 2px 2px black;
 }
-.personal-data-section,
-.experience-section,
-.experience {
+.section {
   display: flex;
   flex-direction: column;
 }
@@ -153,7 +153,7 @@ border: 2px solid rgba(255, 0, 0, 0.479);
   padding: 20px;
   border-radius: 10px;
   font-size: 20px;
-  width: 60vw;
+  min-width: 60vw;
 }
 
 .buttons-area button:hover, .generate-pdf:hover {
@@ -208,8 +208,8 @@ border: 2px solid rgba(255, 0, 0, 0.479);
 #generated-cv {
   /* height: 1400px;*/
   margin: 10px;
-  width: 60vw;
-  height: 84vw;
+  width: 80vw;
+  height: 112vw;
   /* display: inline; */
   /* aspect-ratio: 1.40 / 1; */
   background-color: rgb(255, 255, 255);
@@ -225,7 +225,7 @@ border: 2px solid rgba(255, 0, 0, 0.479);
   justify-content: center;
   align-items: center;
   padding: 5px;
-  /* margin: 20px 0px 0px 0px; */
+  margin: 20px;
   /* height: 12%; */
 }
 
@@ -373,6 +373,32 @@ ul li::before {
 
 .cv-section-data.cv-contact-address, .cv-contact-email, .cv-contact-phone{
     font-size: 0.8em;
+}
+
+.change-lang{
+    width: 100vw;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lang-button{
+    width: 20vh;
+    height: 10vh;
+    padding: 2vh;
+    border: none;
+}
+
+.lang-pol{
+    background: url('../assets/pol.png');
+    background-size: contain;
+}
+
+.lang-eng{
+    background: url('../assets/eng.png');
+    margin-left: 10px;
+    background-size: contain;
 }
 
 @media print{

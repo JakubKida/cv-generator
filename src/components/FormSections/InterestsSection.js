@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { interestsSection } from "../../helpers/languages";
+import { buttons, interestsSection } from "../../helpers/languages";
 
 export default class InterestsSection extends Component {
   // eslint-disable-next-line no-useless-constructor
@@ -9,6 +9,8 @@ export default class InterestsSection extends Component {
 
   render() {
     const language = interestsSection[this.props.language];
+    const buttonNames = buttons[this.props.language];
+
     const interests = this.props.formData;
     const onChangeInput = this.props.onChangeInput;
 
@@ -18,11 +20,11 @@ export default class InterestsSection extends Component {
     return (
       <div id="interests-data" className="interests-section section">
         <h2>{language.interests}</h2>
-        <button className="add-button" onClick={onAddUnit}>Add new interest</button>
+        <button className="add-button" onClick={onAddUnit}>{buttonNames.addInterest}</button>
         {interests.map((interest,i) => (
           <div  key={i} className="interest section-unit" data-index={i}>
-            <input type="text" name="interest-name" placeholder={language.enterInterest} value={interest.interestName} onChange={onChangeInput}></input>
-            <button className="delete-button" onClick={onDeleteUnit}>Delete this interest</button>
+            <input type="text" name="interest-name" placeholder={language.enterInterest} value={interest["interest-name"] || ""} onChange={onChangeInput}></input>
+            <button className="delete-button" onClick={onDeleteUnit}>{buttonNames.deleteInterest}</button>
           </div>
         ))}
       </div>

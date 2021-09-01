@@ -68,7 +68,7 @@ export default class PersonalDataSection extends Component {
             onChangeInput={onChangeInput}
           ></FormInput>
           <div className="form-input">
-            <label htmlFor="image">Zdjęcie (opcjonalne)</label>
+            <label htmlFor="image">{language.photo}</label>
             <input name="image" type="file" onChange={onImageChange}></input>
           </div>
         </div>

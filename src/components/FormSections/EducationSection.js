@@ -18,7 +18,7 @@ export default class EducationSection extends Component {
     return (
       <div id="education-data" className="section" >
         <h2>{language.education}</h2>
-        <button onClick={onAddUnit}>Add new education</button>
+        <button className="add-button" onClick={onAddUnit}>Add new education</button>
         {educations.map((education, i) => (
           <div key={i} className="education section-unit" data-index={i}>
             <FormInput
@@ -63,7 +63,7 @@ export default class EducationSection extends Component {
               prompt={language.toWhen}
               onChangeInput={onChangeInput}
             ></FormInput>
-            <button onClick={onDeleteUnit}>Delete This Education</button>
+            <button className="delete-button" onClick={onDeleteUnit}>Delete This Education</button>
           </div>
         ))}
       </div>

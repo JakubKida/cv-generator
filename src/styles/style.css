@@ -1,273 +1,417 @@
-html,body{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
-.App{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    background-color: rgb(197, 197, 177);
+.App {
+  /* height: 100vh;
+  width: 100vw; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(197, 197, 177);
 }
 
-.form-area{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height: 100vh;
+.form-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  /* height: 100vh; */
 }
 
-.form-input{
-    display: flex;
-    flex-direction: column;
+.form-input {
+  display: flex;
+  flex-direction: column;
 }
 
-#fill-form{
-    overflow: scroll;
-    height: 90vh;
-    aspect-ratio: 1 / 1.40;
-    background-color: rgb(185, 185, 185);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
+#fill-form {
+  /* overflow: scroll; */
+  /* height: 90vh; */
+  min-width: 70vw;
+  margin: 5vh;
+  /* aspect-ratio: 1 / 1.4; */
+  background-color: rgb(185, 185, 185);
+  font-family: "Poppins", sans-serif;
+
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
 }
 
-.form-header{
+#fill-form input{
+    background-color: rgba(255, 255, 255, 0.596);
+    border: 2px solid rgba(255, 255, 255, 0.596);
+    padding: 10px;
+    margin: 10px 15px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+}
+
+#fill-form h2{
     text-align: center;
-    font-family: "Roboto";
-}
-.personal-data-section, .experience-section, .experience{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
-.experience{
-    background-color: grey;
-    margin: 10px;
+#fill-form label{
+    text-align: left;
+    color:black;
+    margin-left: 15px;
 }
 
-.buttons-area{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    /* width: 50vw; */
-    height: 100vh;
-}
-.buttons-area button{
-    white-space: nowrap;
-    border: none;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 10px;
-    font-size:20px;
+#fill-form button{
+    background-color: rgb(228, 228, 228);
+    border: 2px solid rgb(228, 228, 228);
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
 }
 
-.buttons-area button:hover{
+#fill-form button.add-button{
+    background-color: rgba(51, 255, 0, 0.479);
+    border: 2px solid rgba(51, 255, 0, 0.479);
+
+    }
+
+#fill-form button.delete-button{
+background-color: rgba(255, 0, 0, 0.479);
+border: 2px solid rgba(255, 0, 0, 0.479);
+}
+
+#fill-form button:hover{
     opacity: 0.8;
 }
 
-.buttons-area .generate-pdf{
-    color: white;
-    /* background-color: rgb(0, 0, 82); */
-    background-color: rgb(139, 0, 0);
+#fill-form button:active{
+    border: 2px solid black;
 }
 
-.buttons-area .load-example{
-    color: white;
-    background-color: rgb(0, 0, 82);
-    /* background-color: rgb(139, 0, 0); */
+#fill-form input:focus{
+    text-decoration: none;
+    outline: none;
+    border: 2px solid black;
 }
 
-.buttons-area .clear-all{
-    color: white;
-    background-color: black;
-}
-
-
-
-.buttons-area .generate-pdf::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f1c1";
-    margin-left: 10px;
-}
-.buttons-area .load-example::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f15c";
-    margin-left: 10px;
-}
-
-.buttons-area .load-example::after{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    content: "\f15c";
-    margin-left: 10px;
-}
-
-
-.cv-area{
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* width: 50vw; */
-    /* height: 100vh; */
-}
-
-#generated-cv{
-    height: 1400px;
-    width: 1000px;
-    /* aspect-ratio: 1 / 1.40; */
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
-}
-
-
-#generated-cv .header{
-    background-color: rgb(80, 80, 80);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    margin: 20px 20px 0px 20px;
-    height: 12%;
-}
-
-#generated-cv .name{
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.7rem;
+.section{
     text-align: center;
-    margin: 0px;
-    padding: 0px;
+    /* color:rgb(65, 65, 65); */
+    border-bottom: 1px solid black;
 }
 
-#generated-cv .underline{
-    background-color: white;
-    width: 50px;
-    height: 1px;
-    margin-bottom: 5px;
+.section-unit{
+    background-color: grey;
+    margin: 20px 5px;
+    padding: 10px 0px;
+    border-radius: 20px;
 }
 
-#generated-cv .title{
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.7rem;
-    font-weight: 200;
+.form-header {
+  text-align: center;
+  font-family: "Roboto";
+}
+.personal-data-section,
+.experience-section,
+.experience {
+  display: flex;
+  flex-direction: column;
 }
 
-#generated-cv .side-area{
-    /* background-color: red; */
-    width: 35%;
-    /* height: 78%; */
-}
-
-#generated-cv .center-area{
-    /* background-color: blue; */
-    width: 70%;
-    /* height: 78%; */
-}
-
-#generated-cv .main-area{
-    height: 78%;
+.skill.section-unit, .interest.section-unit{
     display: flex;
-    justify-content: center;
+    justify-content: stretch;
     align-items: stretch;
-    margin: 0 30px;
-    /* background-color: lightgray; */
 }
 
-#generated-cv .cv-section{
-    margin-top: 10px;
+/* ..section-unit{
+    display: flex;
+    width: 100%;
+    justify-content: stretch;
+    align-items: stretch;
+} */
+
+.skill input, .interest input{
+    width: 40%;
 }
 
-#generated-cv .cv-section-unit{
-    position: relative;
-    margin: 5px 0px;
+/* .experience {
+  background-color: grey;
+  margin: 10px;
+} */
+
+.buttons-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* width: 50vw; */
+  /* height: 100vh; */
+}
+.buttons-area button , button.generate-pdf{
+  white-space: nowrap;
+  border: none;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 60vw;
 }
 
-#generated-cv .cv-section-title{
-    color: rgb(80, 80, 80);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.2rem;
+.buttons-area button:hover, .generate-pdf:hover {
+  opacity: 0.8;
 }
 
-#generated-cv .cv-section-title-underline{
-    background-color: red;
-    width: 50px;
-    height: 2px;
-    margin-bottom: 5px;
+.generate-pdf {
+  color: white;
+  /* background-color: rgb(0, 0, 82); */
+  margin: 0 auto;
+  background-color: rgb(139, 0, 0);
 }
 
-#generated-cv .cv-section-data{
-    color: rgb(97, 97, 97);
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.6rem;
+.buttons-area .load-example {
+  color: white;
+  background-color: rgb(0, 0, 82);
+  /* background-color: rgb(139, 0, 0); */
 }
 
-#generated-cv .cv-experience-position, #generated-cv .cv-education-facility{
-    font-weight: 900;
+.buttons-area .clear-all {
+  color: white;
+  background-color: black;
 }
 
-#generated-cv .cv-experience-company{
-    color: black;
-    font-weight: 300;
+.generate-pdf::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f1c1";
+  margin-left: 10px;
+}
+.buttons-area .load-example::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f15c";
+  margin-left: 10px;
 }
 
-#generated-cv .cv-experience-work-period{
-    color: rgb(80, 80, 80);
-    background-color: rgba(255, 0, 0, 0.226);
-    padding: 0px 5px;
-    position: absolute;
-    top:0;
-    right: 0;
+.buttons-area .load-example::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f15c";
+  margin-left: 10px;
 }
 
-li,ul{
-    margin-left: 15px;
-    padding: 0;
+.cv-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100vw; */
+}
+
+#generated-cv {
+  /* height: 1400px;*/
+  margin: 10px;
+  width: 60vw;
+  height: 84vw;
+  /* display: inline; */
+  /* aspect-ratio: 1.40 / 1; */
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377);
+  /* margin: 0; */
+  /* padding: 0; */
+}
+
+#generated-cv .header {
+  background-color: rgb(80, 80, 80);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  /* margin: 20px 0px 0px 0px; */
+  /* height: 12%; */
+}
+
+#generated-cv .name {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 2em;
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+#generated-cv .underline {
+  background-color: white;
+  width: 100px;
+  height: 1px;
+  margin-bottom: 5px;
+}
+
+#generated-cv .image-preview{
+    width: 90%;
+    /* margin: 20px; */
+}
+
+#generated-cv .title {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 2vh;
+  font-weight: 200;
+}
+
+#generated-cv .side-area {
+  /* background-color: red; */
+  width: 35%;
+  /* height: 78%; */
+}
+
+#generated-cv .center-area {
+  /* background-color: blue; */
+  width: 70%;
+  /* margin-right: 5%; */
+  /* height: 78%; */
+}
+
+#generated-cv .main-area {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin: 30px;
+  /* background-color: lightgray; */
+}
+
+#generated-cv .cv-section {
+  margin-top: 10px;
+}
+
+#generated-cv .cv-section-unit {
+  position: relative;
+  margin: 5px 0px;
+}
+
+#generated-cv .cv-section-title {
+  color: rgb(80, 80, 80);
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+}
+
+#generated-cv .cv-section-title-underline {
+  background-color: red;
+  width: 50px;
+  height: 2px;
+  margin-bottom: 5px;
+}
+
+.cv-section-data {
+  color: rgb(97, 97, 97);
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8em;
+}
+
+#generated-cv .cv-experience-position,
+#generated-cv .cv-education-facility {
+  font-weight: 900;
+}
+
+#generated-cv .cv-experience-company {
+  color: black;
+  font-weight: 300;
+}
+
+#generated-cv .cv-experience-work-period {
+  color: rgb(80, 80, 80);
+  background-color: rgba(255, 0, 0, 0.226);
+  padding: 0px 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+li,
+ul {
+  margin-left: 15px;
+  padding: 0;
 }
 
 ul {
-    list-style: none; /* Remove default bullets */
-  }
+  list-style: none; /* Remove default bullets */
+}
 
-  ul li::before {
-    content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: red; /* Change the color */
-    font-weight: bold; /* If you want it to be bold */
-    display: inline-block; /* Needed to add space between the bullet and the text */
-    width: 1em; /* Also needed for space (tweak if needed) */
-    margin-left: -1em; /* Also needed for space (tweak if needed) */
-  }
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: red; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
 
-  .cv-contact-phone::before{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: red;
-    content: "\f095";
-    margin-right: 5px;
-    width: 10px;
-  }
+.cv-contact-phone::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+  content: "\f095";
+  margin-right: 5px;
+  width: 10px;
+}
 
-  .cv-contact-email::before{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: red;
-    content: "\f0e0";
-    margin-right: 5px;
-    width: 100px;
+.cv-contact-email::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+  content: "\f0e0";
+  margin-right: 5px;
+  width: 100px;
+}
 
-  }
+.cv-contact-address::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: red;
+  content: "\f3c5";
+  margin-right: 5px;
+  width: 100px;
+}
 
-  .cv-contact-address::before{
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    color: red;
-    content: "\f3c5";
-    margin-right: 5px;
-    width: 100px;
+.cv-section-data.cv-contact-address, .cv-contact-email, .cv-contact-phone{
+    font-size: 0.8em;
+}
 
-  }
+@media print{
+    #generated-cv {
+        /* height: 1400px;*/
+        margin: 0 auto;
+        width: 100vw; 
+        /* display: inline; */
+        aspect-ratio: 1 / 1.40;
+        background-color: rgb(255, 255, 255);
+        /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.377); */
+        box-shadow: none;
+        /* margin: 0; */
+        padding: 0;
+      }    
+
+      #generated-cv .name {
+        color: white;
+        font-family: "Poppins", sans-serif;
+        font-size: 2em;
+        text-align: center;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      #generated-cv .cv-section-title {
+        color: rgb(80, 80, 80);
+        font-family: "Poppins", sans-serif;
+        font-size: 1rem;
+      }
+      
+      #generated-cv .cv-section-data {
+        color: rgb(97, 97, 97);
+        font-family: "Poppins", sans-serif;
+        font-size: 0.6em;
+      }  
+      
+      .cv-section-data.cv-contact-address, .cv-contact-email, .cv-contact-phone{
+        font-size: 0.5em;
+        color: red;
+    }
+}

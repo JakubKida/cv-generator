@@ -3,16 +3,18 @@ import CreatedCV from "./components/CreatedCv";
 import "./styles/style.css";
 import ControlButtons from "./components/ControlButtons";
 import React from "react";
-import uniqid from 'uniqid';
+import uniqid from "uniqid";
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
+    this.handleImageChange= this.handleImageChange.bind(this);
     this.deleteUnit = this.deleteUnit.bind(this);
     this.addUnit = this.addUnit.bind(this);
     this.state = {
+      image: {},
       language: "polish",
       data: {
         "personal-data": [{}],
@@ -22,6 +24,18 @@ class App extends React.Component {
         "interests-data": [{}],
       },
     };
+  }
+
+async handleImageChange(event){
+  debugger;
+     await this.setState({image:event.target.files[0]});
+
+    const fr = new FileReader()
+    fr.readAsDataURL(this.state.image)
+    fr.onload = function(e) {
+      var img = document.querySelector('.image-preview')
+      img.src = this.result
+    } 
   }
 
   handleChange(event) {
@@ -73,7 +87,7 @@ class App extends React.Component {
 
     const copiedObj = JSON.parse(JSON.stringify(this.state.data[sectionName]));
 
-    copiedObj.push({key:uniqid()});
+    copiedObj.push({ key: uniqid() });
 
     this.setState((prevState) => ({
       data: {
@@ -89,21 +103,31 @@ class App extends React.Component {
         <FilloutForm
           language={this.state.language}
           data={this.state.data}
+          image={this.state.image}
           handleChange={this.handleChange}
           addUnit={this.addUnit}
           deleteUnit={this.deleteUnit}
+          onImageChange={this.handleImageChange}
         ></FilloutForm>
-        <ControlButtons language={this.state.language} data={this.state.data}></ControlButtons>
         <ReactToPrint content={() => this.componentRef}>
           <PrintContextConsumer>
             {({ handlePrint }) => (
               <button className="generate-pdf" onClick={handlePrint}>
-                {this.state.language.generatePDF}
+                Generuj pdf
               </button>
             )}
           </PrintContextConsumer>
         </ReactToPrint>
-        <CreatedCV data={this.state.data} ref={(el) => (this.componentRef = el)}></CreatedCV>
+        <ControlButtons
+          language={this.state.language}
+          data={this.state.data}
+        ></ControlButtons>
+        <div className="cv-area">
+          <CreatedCV
+            data={this.state.data}
+            ref={(el) => (this.componentRef = el)}
+          ></CreatedCV>
+        </div>
       </div>
     );
   }

@@ -17,11 +17,11 @@ export default class SkillsSection extends Component {
     return (
       <div id="skills-data" className="skills-section section">
         <h2>{language.skills}</h2>
-        <button onClick={onAddUnit}>Add new skill</button>
+        <button className="add-button" onClick={onAddUnit}>Add new skill</button>
         {skills.map((skill,i) => (
           <div key={i} className="skill section-unit" data-index={i}>
             <input type="text" name="skill-name" placeholder={language.enterSkill} value={skill.skillName}onChange={onChangeInput}></input>
-            <button onClick={onDeleteUnit}>Delete this skill</button>
+            <button className="delete-button" onClick={onDeleteUnit}>Delete this skill</button>
           </div>
         ))}
       </div>

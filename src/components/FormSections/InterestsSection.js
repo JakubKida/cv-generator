@@ -16,13 +16,13 @@ export default class InterestsSection extends Component {
     const onAddUnit = this.props.onAddUnit;
 
     return (
-      <div id="interests-data" className="skills-section section">
+      <div id="interests-data" className="interests-section section">
         <h2>{language.interests}</h2>
-        <button onClick={onAddUnit}>Add new interest</button>
+        <button className="add-button" onClick={onAddUnit}>Add new interest</button>
         {interests.map((interest,i) => (
-          <div  key={i} className="skill section-unit" data-index={i}>
+          <div  key={i} className="interest section-unit" data-index={i}>
             <input type="text" name="interest-name" placeholder={language.enterInterest} value={interest.interestName} onChange={onChangeInput}></input>
-            <button onClick={onDeleteUnit}>Delete this interest</button>
+            <button className="delete-button" onClick={onDeleteUnit}>Delete this interest</button>
           </div>
         ))}
       </div>

@@ -14,7 +14,7 @@ export default class FilloutForm extends Component {
   render() {
     const language = this.props.language;
     // const data = this.state.data;
-    const {data, handleChange, deleteUnit, addUnit} = this.props;
+    const {data, handleChange, deleteUnit, addUnit, onImageChange} = this.props;
 
     return (
       <div className="form-area">
@@ -24,6 +24,7 @@ export default class FilloutForm extends Component {
             formData={data["personal-data"]}
             language={language}
             onChangeInput={handleChange}
+            onImageChange={onImageChange}
           ></PersonalDataSection>
           <ExperienceSection
             formData={data["experience-data"]}

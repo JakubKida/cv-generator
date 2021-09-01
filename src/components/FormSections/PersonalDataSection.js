@@ -16,7 +16,7 @@ export default class PersonalDataSection extends Component {
 
     return (
       <div id="personal-data" className="personaldata section">
-          <h3>{language.personalSection}</h3>
+        <h3>{language.personalSection}</h3>
         <div className="section-unit" data-index="0">
           <FormInput
             name="name"
@@ -67,7 +67,10 @@ export default class PersonalDataSection extends Component {
             prompt={language.enterDescription}
             onChangeInput={onChangeInput}
           ></FormInput>
-          <input type="file" onChange={onImageChange}></input>
+          <div className="form-input">
+            <label htmlFor="image">Zdjęcie (opcjonalne)</label>
+            <input name="image" type="file" onChange={onImageChange}></input>
+          </div>
         </div>
       </div>
     );

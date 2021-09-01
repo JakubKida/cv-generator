@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
-    this.handleImageChange= this.handleImageChange.bind(this);
+    this.handleImageChange = this.handleImageChange.bind(this);
     this.deleteUnit = this.deleteUnit.bind(this);
     this.addUnit = this.addUnit.bind(this);
     this.state = {
@@ -26,16 +26,28 @@ class App extends React.Component {
     };
   }
 
-async handleImageChange(event){
-  debugger;
-     await this.setState({image:event.target.files[0]});
+  async handleImageChange(event) {
+    await this.setState({ image: event.target.files[0] });
+    const image = this.state.image;
+    if (image === undefined) {
+      document.querySelector(".image-preview").remove();
+    } else {
+      const fr = new FileReader();
+      fr.readAsDataURL(this.state.image);
+      fr.onload = function (e) {
+        let sideArea = document.querySelector(".side-area");
+        let imgElem;
+        if (document.querySelector(".image-preview") === null) {
+          imgElem = document.createElement("img");
+        } else {
+          imgElem = document.querySelector(".image-preview");
+        }
 
-    const fr = new FileReader()
-    fr.readAsDataURL(this.state.image)
-    fr.onload = function(e) {
-      var img = document.querySelector('.image-preview')
-      img.src = this.result
-    } 
+        imgElem.classList.add("image-preview");
+        imgElem.src = this.result;
+        sideArea.prepend(imgElem);
+      };
+    }
   }
 
   handleChange(event) {
@@ -103,7 +115,6 @@ async handleImageChange(event){
         <FilloutForm
           language={this.state.language}
           data={this.state.data}
-          image={this.state.image}
           handleChange={this.handleChange}
           addUnit={this.addUnit}
           deleteUnit={this.deleteUnit}
@@ -124,6 +135,7 @@ async handleImageChange(event){
         ></ControlButtons>
         <div className="cv-area">
           <CreatedCV
+            image={this.state.image}
             data={this.state.data}
             ref={(el) => (this.componentRef = el)}
           ></CreatedCV>

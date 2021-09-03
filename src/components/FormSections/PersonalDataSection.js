@@ -1,18 +1,12 @@
-import React, { Component } from "react";
 import { personalSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
 
-export default class PersonalDataSection extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
+const PersonalDataSection = (props) => {
 
-  render() {
-    const language = personalSection[this.props.language];
-    const personalData = this.props.formData[0];
-    const onChangeInput = this.props.onChangeInput;
-    const onImageChange = this.props.onImageChange;
+    const language = personalSection[props.language];
+    const personalData = props.formData[0];
+    const onChangeInput = props.onChangeInput;
+    const onImageChange = props.onImageChange;
 
     return (
       <div id="personal-data" className="personaldata section">
@@ -74,5 +68,6 @@ export default class PersonalDataSection extends Component {
         </div>
       </div>
     );
-  }
 }
+
+export default PersonalDataSection;

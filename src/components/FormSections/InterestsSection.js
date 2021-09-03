@@ -1,21 +1,14 @@
-import React, { Component } from "react";
 import { buttons, interestsSection } from "../../helpers/languages";
 
-export default class InterestsSection extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
+const InterestsSection=(props)=>{ 
+    const language = interestsSection[props.language];
+    const buttonNames = buttons[props.language];
 
-  render() {
-    const language = interestsSection[this.props.language];
-    const buttonNames = buttons[this.props.language];
+    const interests = props.formData;
+    const onChangeInput = props.onChangeInput;
 
-    const interests = this.props.formData;
-    const onChangeInput = this.props.onChangeInput;
-
-    const onDeleteUnit = this.props.onDeleteUnit;
-    const onAddUnit = this.props.onAddUnit;
+    const onDeleteUnit = props.onDeleteUnit;
+    const onAddUnit = props.onAddUnit;
 
     return (
       <div id="interests-data" className="interests-section section">
@@ -28,6 +21,7 @@ export default class InterestsSection extends Component {
           </div>
         ))}
       </div>
-    );
-  }
+    ); 
 }
+
+export default InterestsSection;

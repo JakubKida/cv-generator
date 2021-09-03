@@ -1,19 +1,15 @@
-import React, { Component } from "react";
 import { buttons, skillsSection } from "../../helpers/languages";
 
-export default class SkillsSection extends Component {
-  // eslint-disable-next-line no-useless-constructor
-  constructor(props) {
-    super(props);
-  }
+const SkillsSection = (props)=> {
+    const language = skillsSection[props.language];
+    const buttonNames = buttons[props.language];
 
-  render() {
-    const language = skillsSection[this.props.language];
-    const buttonNames = buttons[this.props.language];
-    const skills = this.props.formData;
-    const onChangeInput = this.props.onChangeInput;
-    const onDeleteUnit = this.props.onDeleteUnit;
-    const onAddUnit = this.props.onAddUnit;
+    const skills = props.formData;
+    const onChangeInput = props.onChangeInput;
+
+    const onDeleteUnit = props.onDeleteUnit;
+    const onAddUnit = props.onAddUnit;
+
     debugger;
     return (
       <div id="skills-data" className="skills-section section">
@@ -37,5 +33,6 @@ export default class SkillsSection extends Component {
         ))}
       </div>
     );
-  }
 }
+
+export default SkillsSection;

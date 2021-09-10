@@ -7,7 +7,7 @@ export const exampledata = {
       title: "Delivery Boy",
       address: "New York",
       phone: "123 456 789",
-      email: "planetexpress@gmail.com",
+      email: "pexpress@gmail.com",
       description:
         "I am a delivery boy in the distant future. I'm looking for any job that would help out my career.",
     },

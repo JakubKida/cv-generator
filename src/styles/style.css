@@ -382,17 +382,17 @@ ul li::before{
 
     #generated-cv .cv-section-title{
         color: rgb(80, 80, 80);
-        font-size: 1.2rem;
+        font-size: 1.6rem;
         font-family: 'Poppins', sans-serif;
     }
 
     #generated-cv .cv-section-data:not(.cv-contact-address, .cv-contact-email, .cv-contact-phone){
         color: rgb(97, 97, 97);
-        font-size: 1.1em;
+        font-size: 1.2rem;
         font-family: 'Poppins', sans-serif;
     }
 
     .cv-contact-address, .cv-contact-email, .cv-contact-phone{
-        font-size: 0.9em;
+        font-size: 0.8rem;
     }
 }

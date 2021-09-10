@@ -1,5 +1,5 @@
 import ReactToPrint, { PrintContextConsumer } from "react-to-print";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import FilloutForm from "./components/FilloutForm";
 import CreatedCV from "./components/CreatedCv";
 import ControlButtons from "./components/ControlButtons";
@@ -18,6 +18,8 @@ const App = (props) => {
     "skills-data": [{}],
     "interests-data": [{}],
   });
+
+  const componentRef = useRef();
 
   const changeLanguage = (event) => {
     event.preventDefault();
@@ -133,15 +135,13 @@ const App = (props) => {
         deleteUnit={deleteUnit}
         onImageChange={handleImageChange}
       ></FilloutForm>
-      <ReactToPrint content={() => this.componentRef}>
-        <PrintContextConsumer>
-          {({ handlePrint }) => (
-            <button className="generate-pdf" onClick={handlePrint}>
-              {buttons[language].generatePDF}
-            </button>
-          )}
-        </PrintContextConsumer>
-      </ReactToPrint>
+      <ReactToPrint
+        trigger={() => (
+          <button className="generate-pdf">{buttons[language].generatePDF}</button>
+        )}
+        content={() => componentRef.current}
+      />
+
       <ControlButtons
         loadExample={loadExample}
         language={language}
@@ -151,7 +151,7 @@ const App = (props) => {
       <div className="cv-area">
         <CreatedCV
           language={language}
-          ref={(el) => (this.componentRef = el)}
+          ref={componentRef}
           image={image}
           data={data}
         ></CreatedCV>

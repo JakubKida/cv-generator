@@ -1,7 +1,8 @@
 import uniqid from "uniqid";
 import { cvSections } from "../helpers/languages";
+import React, { forwardRef }from "react";
 
-const CreatedCV = (props) => {
+const CreatedCV = (props, ref) => {
   const language = cvSections[props.language];
   const personalData = props.data["personal-data"][0];
   const experienceData = props.data["experience-data"];
@@ -10,7 +11,7 @@ const CreatedCV = (props) => {
   const interestData = props.data["interests-data"];
 
   return (
-    <div id="generated-cv">
+    <div id="generated-cv" ref={ref}>
       <div className="header">
         <div className="name">
           {personalData.name || language.name}{" "}
@@ -106,5 +107,5 @@ const CreatedCV = (props) => {
     </div>
   );
 };
-
-export default CreatedCV;
+export default forwardRef(CreatedCV);
+// export default CreatedCV;

@@ -1,5 +1,5 @@
 # CV-Generator
-A web app written using React that lets you generate a simple CV by filling the form with your personal information (and optionally adding a photo). It generates a PDF file of the generated CV using [react-to-print](https://www.npmjs.com/package/react-to-print). The interface is avaiable in languages: polish, english.
+A web app written using React that lets you generate a simple CV by filling the form with your personal information (and optionally adding a photo). It generates a PDF file of the generated CV using [react-to-print](https://www.npmjs.com/package/react-to-print). The interface is available in languages: polish, english.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

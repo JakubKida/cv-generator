@@ -48,7 +48,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    debugger;
     if (isInitialMount.current) {
       isInitialMount.current = false;
     } else if (image === null || image === undefined) {

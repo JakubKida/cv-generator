@@ -330,7 +330,7 @@ ul li::before{
     font-family: 'Font Awesome 5 Free';
 }
 
-.cv-section-data.cv-contact-address, .cv-contact-email, .cv-contact-phone{
+.cv-contact-address, .cv-contact-email, .cv-contact-phone{
     font-size: 0.8em;
 }
 
@@ -386,14 +386,13 @@ ul li::before{
         font-family: 'Poppins', sans-serif;
     }
 
-    #generated-cv .cv-section-data{
+    #generated-cv .cv-section-data:not(.cv-contact-address, .cv-contact-email, .cv-contact-phone){
         color: rgb(97, 97, 97);
-        font-size: 0.8em;
+        font-size: 1.1em;
         font-family: 'Poppins', sans-serif;
     }
 
-    .cv-section-data.cv-contact-address, .cv-contact-email, .cv-contact-phone{
-        color: red;
-        font-size: 0.5em;
+    .cv-contact-address, .cv-contact-email, .cv-contact-phone{
+        font-size: 0.9em;
     }
 }

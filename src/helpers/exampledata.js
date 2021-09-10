@@ -1,3 +1,4 @@
+//Sample data to demonstrate how the app works
 export const exampledata = {
   "personal-data": [
     {

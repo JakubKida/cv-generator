@@ -9,8 +9,7 @@ const SkillsSection = (props)=> {
 
     const onDeleteUnit = props.onDeleteUnit;
     const onAddUnit = props.onAddUnit;
-
-    debugger;
+    
     return (
       <div id="skills-data" className="skills-section section">
         <h2>{language.skills}</h2>

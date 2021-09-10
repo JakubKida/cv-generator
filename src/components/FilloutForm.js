@@ -5,6 +5,7 @@ import InterestsSection from "./FormSections/InterestsSection";
 import PersonalDataSection from "./FormSections/PersonalDataSection";
 import SkillsSection from "./FormSections/SkillsSection";
 
+// form with separate component for each section
 const FilloutForm = (props) => {
   const language = props.language;
   const { data, handleChange, deleteUnit, addUnit, onImageChange } = props;

@@ -2,9 +2,9 @@ import { buttons } from "../helpers/languages";
 
 const ControlButtons = (props) => {
   const language = buttons[props.language];
+
   const clearAllFields = props.clearAllFields;
   const loadExample = props.loadExample;
-
   return (
     <div className="buttons-area">
       <button className="load-example" onClick={loadExample}>

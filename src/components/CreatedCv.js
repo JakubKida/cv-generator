@@ -2,6 +2,7 @@ import uniqid from "uniqid";
 import { cvSections } from "../helpers/languages";
 import React, { forwardRef }from "react";
 
+// cv component that displays data from FilloutForm
 const CreatedCV = (props, ref) => {
   const language = cvSections[props.language];
   const personalData = props.data["personal-data"][0];
@@ -108,4 +109,3 @@ const CreatedCV = (props, ref) => {
   );
 };
 export default forwardRef(CreatedCV);
-// export default CreatedCV;

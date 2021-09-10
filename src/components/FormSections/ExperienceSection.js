@@ -4,7 +4,9 @@ import FormInput from "./FormInput";
 const ExperienceSection = (props) => {
   const language = experienceSection[props.language];
   const buttonNames = buttons[props.language];
+
   const experiences = props.formData;
+  
   const onChangeInput = props.onChangeInput;
   const onDeleteUnit = props.onDeleteUnit;
   const onAddUnit = props.onAddUnit;

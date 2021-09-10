@@ -2,12 +2,11 @@ import { personalSection } from "../../helpers/languages";
 import FormInput from "./FormInput";
 
 const PersonalDataSection = (props) => {
-
     const language = personalSection[props.language];
     const personalData = props.formData[0];
+
     const onChangeInput = props.onChangeInput;
     const onImageChange = props.onImageChange;
-
     return (
       <div id="personal-data" className="personaldata section">
         <h3>{language.personalSection}</h3>

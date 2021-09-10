@@ -1,3 +1,9 @@
+// This file consists of objects with strings representing
+// different languages available in the app.
+// Adding a new language is as simple as making
+// a new nested object in each of following ones
+// and then adding a button on top of App component
+
 export const personalSection = {
   polish: {
     personalSection: "Informacje Osobiste",
@@ -146,7 +152,7 @@ export const buttons = {
     addInterest: "Add interest",
     deleteInterest: "Delete interest",
     addEducation: "Add Education",
-    deleteEducation: "Usuń edukację",
+    deleteEducation: "Delete Education",
     generatePDF: "Generate PDF File",
     loadExample: "Load example data",
     clearAll: "Clear all fields",
